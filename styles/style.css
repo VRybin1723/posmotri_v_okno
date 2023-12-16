@@ -9,6 +9,9 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -126,7 +129,7 @@ ol {
 
 .search-form__textfield {
   font-family: inherit;
-  color: inherit; /* Этот похоже не наследуется, но цвет подходящий */
+  color: inherit; 
   font-size: 18px;
   background-color: transparent;
   width: 100%;
@@ -167,9 +170,9 @@ ol {
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
   content: "";
   position: absolute;
-  width: 14px;
-  height: 14px;
-  transform: translate(13%, 12%);
+  width: 15px;
+  height: 15px;
+  transform: translate(7%, 7%);
   background-color: #fff;
 }
 
