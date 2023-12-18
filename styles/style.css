@@ -45,18 +45,21 @@ ol {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
+  padding-left: 20px;
   gap: 30px;
-  padding: 136px 30px;
 }
-
-/* Левая сторона */
 
 .result {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 16px;
-  padding-bottom: 3px;
+}
+
+.result__video-container {
+  position: relative;
+  width: 711px;
+  height: 386px;
 }
 
 .result__video {
@@ -66,16 +69,24 @@ ol {
   object-position: center;
 }
 
-.result__video-container {
-  position: relative;
-  width: 711px;
-  height: 386px;
-}
-
 .search-form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.search-form__fieldset {
+  border: none;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .search-form__label {
@@ -87,8 +98,8 @@ ol {
   gap: 5px;
 }
 
-.search-form__label:focus {
-  outline: none;
+.search-form__label-text {
+  cursor: pointer;
 }
 
 .search-form__label:hover .search-form__label-text {
@@ -109,27 +120,9 @@ ol {
   white-space: nowrap;
 }
 
-.search-form__fieldset {
-  border: none;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 5px;
-}
-
-.search-form__fieldset-title {
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-}
-
-.search-form__label-text {
-  cursor: pointer;
-}
-
 .search-form__textfield {
   font-family: inherit;
-  color: inherit; 
+  color: inherit;
   font-size: 18px;
   background-color: transparent;
   width: 100%;
@@ -169,24 +162,20 @@ ol {
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
   content: "";
-  position: absolute;
+  display: block;
   width: 15px;
   height: 15px;
-  transform: translate(7%, 7%);
+  transform: translate(8%, 8%);
   background-color: #fff;
 }
 
 .search-form__submit-button {
   width: 194px;
-  height: 34px;
   align-self: end;
 }
 
-/* Правая сторона */
-
 .content__details {
   width: 100%;
-  min-height: 534px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -209,26 +198,20 @@ ol {
 .content__list {
   position: relative;
   display: flex;
-  max-height: 298px;
+  height: 298px;
+  width: 422px;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   overflow: auto;
   padding-bottom: 3px;
 }
 
-.content__list-item:not(:last-child) {
-  margin-bottom: 30px;
-}
-
-li:last-child {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 404px;
-}
-
 .content__list-item {
   padding: 1px;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 .content__card-link {
@@ -238,13 +221,11 @@ li:last-child {
   margin: 1px;
 }
 
-.content__card-link_current:active,
-.content__card-link_current:focus {
+.content__card-link_current {
   background: #545050;
 }
 
-.content__card-link:focus,
-.content__card-link_current:focus {
+.content__card-link:focus {
   outline: none;
 }
 
@@ -252,13 +233,8 @@ li:last-child {
   outline: 1px solid #fff;
 }
 
-.content__video-card:hover {
+.content__card-link:hover {
   text-decoration: underline;
-}
-
-.content__video-card:active {
-  text-decoration: none;
-  background: #545050;
 }
 
 .content__video-card {
@@ -300,12 +276,10 @@ li:last-child {
 
 .more-button {
   width: 399px;
-  height: 34px;
 }
 
-/* Общее */
-
 .button {
+  min-height: 34px;
   cursor: pointer;
   font-family: inherit;
   color: inherit;
